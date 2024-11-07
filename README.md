@@ -1,6 +1,6 @@
 # Setup o1-adapter
 
-**o1-adapter is build using the bare-metal method**
+**o1-adapter has been built using the bare-metal method**
 
 Assuming that all the libraries are already installed into the system, building the source code requires running the `./build.sh` script from within the `src` folder.
 The script requires and accepts *no* parameters, and will compile and build the entire code.
