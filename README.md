@@ -85,9 +85,9 @@ _3gpp-nr-nrm-ep.yang
 
 ```
 # Installing yang in sysrepo
-sysrepoctl -I
+sysrepoctl -i <yang file>
 # List out yangs in sysrepo
-sysrepoctl -l
+sysrepoctl -l <yang file>
 ```
 ### Configuration Management of DU & CU 
 The O1-Adapter enables the SMO to perform essential O&M activities on O-DU and O-CU.
