@@ -179,7 +179,8 @@ There are two ways to configure the parameters:
 * Check for the updated changes over the O1-adapter
 ```
 *Using the above instructions we can configure the DU & CU parameters with the help of netopeer2-cli  which acts as a NETCONF client and updated changes can be seen over O1-Adapter*
-*Calculated Configurations acording to BW : https://drive.google.com/file/d/1RUGTTSzs_5HsXVsqmXQj2USwjv_uQF9U/view?usp=sharing*
+
+**Calculated Configurations acording to BW : https://drive.google.com/file/d/1RUGTTSzs_5HsXVsqmXQj2USwjv_uQF9U/view?usp=sharing**
 
 ### Performance management of DU
 Performance management -describes measurements and counters used to collect data related to DU/CU operations
