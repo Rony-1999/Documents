@@ -224,6 +224,86 @@ Reference: https://docs.o-ran-sc.org/projects/o-ran-sc-nonrtric-plt-ranpm/en/lat
 
 ![image](https://github.com/user-attachments/assets/b6bcd363-ddef-4c97-a88f-9fff1dfea7e5)
 
+### Configuration
+Configuration is done through the `config.json` file. A sample is provided:
+```
+{
+    "log-level": 3,
+    "software-version": "abcd",
+    "network": {
+        "host": "10.20.11.134",
+        "username": "netconf",
+        "password": "netconf!",
+        "netconf-port": 1830,
+        "sftp-port": 1222
+    },
+
+    "ves": {
+        "template": {
+            "new-alarm": "/adapter/config/ves-new-alarm.json",
+            "clear-alarm": "/adapter/config/ves-clear-alarm.json",
+            "pnf-registration": "/adapter/config/ves-pnf-registration.json",
+            "file-ready": "/adapter/config/ves-file-ready.json",
+            "heartbeat": "/adapter/config/ves-heartbeat.json",
+            "pm-data": "/adapter/config/pmData-measData.xml"
+        },
+
+        "pnf-registration": true,
+        "heartbeat-interval": 30,
+
+        "url": "https://10.20.35.128:8443/eventListener/v7",
+        "username": "sample1",
+        "password": "sample1",
+
+        "file-expiry": 86400,
+        "pm-data-interval": 30
+    },
+
+    "alarms": {
+        "internal-connection-lost-timeout": 3,
+
+        "load-downlink-exceeded-warning-threshold": 50,
+        "load-downlink-exceeded-warning-timeout": 30
+    },
+
+    "telnet": {
+        "host": "10.20.11.134",
+        "port": 9091
+    },
+
+    "info": {
+        "gnb-du-id": 0,
+        "gnb-cu-id": 0,
+        "cell-local-id": 0,
+        "node-id": "gNB-Eurecom-5GNRBox-00001",
+         "node-id": "gNB-Eurecom-5GNRBox-00002",
+        "location-name": "MountPoint 05, Rack 234-17, Room 234, 2nd Floor, Körnerstraße 7, 10785 Berlin, Germany, Europe, Earth, Solar-System, Universe",
+        "managed-by": "ManagementSystem=O-RAN-SC-ONAP-based-SMO",
+        "managed-element-type": "NodeB",
+        "model": "nr-softmodem",
+        "unit-type": "gNB"
+        "cu-unit-type": "CU"
+    }
+}
+```
+
+**Configurations in CU and DUs config.json to look for before running CU and DU adapter**
+  - url needs to be modified according to requirements as the webpage is secured or not
+  - username and password can be modified as per user's choice
+  - while running CU and DU simultaneously telnet port should be different for both
+  - If working on fault management modification in alarm load threshold and timeout needs to be done as per requirement
+    ```
+    # for CU
+    "telnet": {
+        "host": "10.33.42.242",
+        "port": 9090
+    },
+    #for DU
+    "telnet": {
+        "host": "10.33.42.242",
+        "port": 9091
+    },
+    ```
 ## Appendix
 
 ### References
