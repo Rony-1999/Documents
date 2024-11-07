@@ -1,6 +1,6 @@
-# Build o1-adapter
+# Setup o1-adapter
 
-*In this method we are building o1-adapter bare-metal*
+**o1-adapter is build using the bare-metal method**
 
 Assuming that all the libraries are already installed into the system, building the source code requires running the `./build.sh` script from within the `src` folder.
 The script requires and accepts *no* parameters, and will compile and build the entire code.
@@ -180,7 +180,7 @@ There are two ways to configure the parameters:
 ```
 *Using the above instructions we can configure the DU & CU parameters with the help of netopeer2-cli  which acts as a NETCONF client and updated changes can be seen over O1-Adapter*
 
-**Calculated Configurations acording to BW : https://drive.google.com/file/d/1RUGTTSzs_5HsXVsqmXQj2USwjv_uQF9U/view?usp=sharing**
+**Calculated Configurations acording to Bandwidths: https://drive.google.com/file/d/1RUGTTSzs_5HsXVsqmXQj2USwjv_uQF9U/view?usp=sharing**
 
 ### Performance management of DU
 Performance management -describes measurements and counters used to collect data related to DU/CU operations
@@ -191,7 +191,7 @@ When any UE connects with the network its operational information is collected i
 
   * PM is collected
      * in files, provided via FTP
-     * Notification via VES if a new file available.
+     * Notification via VES if a new file is available.
      * Notifications are running always after the O1Adapter startup and the Order of notifications is as follows:
        
         *PNF Registration, Heartbeat Event, File Ready Event, Fault Management*
@@ -201,10 +201,10 @@ When any UE connects with the network its operational information is collected i
  | -- | -- | --     |
  frame-type 	|enum ["tdd","fdd"] 	|not used
 band-number 	|number 	
-num-ues       |number 	|Number of connected UEs (To cell or DU?) . See section "Performance Data (PM)"
+num-ues       |number 	|Number of connected UEs (To cell or DU?). See the section "Performance Data (PM)"
 ues 	 	|List |	
 load 	 	|integer 	|Percentage number [0..100], reflecting downling load
-ues-thp.rnti |List 	|List with throughput status of UEs. Virtual class:uethp specified below.
+ues-thp.rnti |List 	|List with throughput status of UEs. Virtual class: setup specified below.
 uethp:rnti 	 |Integer 	|UE is
 uethp:dl 	|Integer 	|Downlink load in kbit/s
 uethp:ul 	|Integer 	|Uplink load kbit/s
@@ -212,7 +212,7 @@ uethp:ul 	|Integer 	|Uplink load kbit/s
 
 
 ### VES Notifications
-Virtual Event Streaming (VES) Collector is a RESTful collector that processes JSON messages/VES messages.
+A virtual Event Streaming (VES) Collector is a RESTful collector that processes JSON messages/VES messages.
 
 Reference: https://docs.o-ran-sc.org/projects/o-ran-sc-nonrtric-plt-ranpm/en/latest/overview.html#data-flow
 
@@ -220,7 +220,7 @@ Reference: https://docs.o-ran-sc.org/projects/o-ran-sc-nonrtric-plt-ranpm/en/lat
  - Run OAI telnet server and O1-Adapter telnet client
  - Run netopeer server
  - Run SMO
- - Posting VES events such as PNF registration, heartbeat, file ready to SMO with Response = 202 and with message successfully event sent
+ - Posting VES events such as PNF registration, heartbeat, and file ready to SMO with Response = 202 and with message successfully event sent
 
 ![image](https://github.com/user-attachments/assets/b6bcd363-ddef-4c97-a88f-9fff1dfea7e5)
 
