@@ -13,7 +13,7 @@ Required libraries:
 - telnet
 - cjson
 
-Some of the libraries already have their own dependencies, such as:
+Some of the libraries already have their dependencies, such as:
 - libssh version 0.9.2
 - libnetconf2
 ```
@@ -21,6 +21,16 @@ Some of the libraries already have their own dependencies, such as:
 cd /o1-adapter/src
 ./build
 ```
+### How to connect o1-adapter and OAI via Telnet
+Specialized functionality for O1 NETCONF Server is provided by the OAI Telnet (acts as telnet server) extension for O1. The attributes are prepared and converted to the format and structure required by the relevant yang specification.
+
+OAI telneto1: https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/telnet-o1/common/utils/telnetsrv/DOC/telneto1.md
+```
+# Bring up o1-adapter(Telnet client) 
+cd /o1-adapter/src
+./gnb-adapter
+```
+
 ### Building and installing dependencies
 For building the binary, such examples include `libpcre2-dev`, `zlib1g-dev`, and `libssl-dev`.
 
@@ -46,7 +56,7 @@ Once the YANG models are available the `install-yangs.sh` script will install th
 Installing the models must be done via such scripts because the script only installs the required models, not all of them, and the install order is important.
 
 ### Installing DU & CU 3GPP YANGS in Sysrepo
-List of DU and CU yangs to be installed in sysrepo are:
+A list of DU and CU yangs to be installed in sysrepo are:
 |YANGS |
 | --- |
 _3gpp-common-yang-extensions.yang
@@ -81,6 +91,7 @@ sysrepoctl -l
 ```
 ### Configuration Management of DU & CU 
 The O1-Adapter enables the SMO to perform essential O&M activities on O-DU and O-CU.
+
 **Configuration Management:** Adding, modifying, or deleting configurations of connected O-DU and O-CU.
 
 List of DU and CU configurable parameters:
@@ -165,7 +176,6 @@ There are two ways to configure the parameters:
 *Using the above instructions we can configure the DU & CU parameters with the help of netopeer2-cli  which acts as a NETCONF client and updated changes can be seen over O1-Adapter*
 
 
-  
   
 
 
