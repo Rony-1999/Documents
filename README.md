@@ -26,9 +26,13 @@ Specialized functionality for O1 NETCONF Server is provided by the OAI Telnet (a
 
 OAI telneto1: https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/telnet-o1/common/utils/telnetsrv/DOC/telneto1.md
 ```
-# Bring up o1-adapter(Telnet client) 
+# Bring up o1-adapter(DU)
 cd /o1-adapter/src
-./gnb-adapter
+./gnb-adapter --du
+
+# Bring up o1-adapter(DU)
+cd /o1-adapter/src
+./gnb-adapter --cu
 ```
 
 ### Building and installing dependencies
