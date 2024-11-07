@@ -30,7 +30,7 @@ OAI telneto1: https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/telnet-o1/
 cd /o1-adapter/src
 ./gnb-adapter --du
 
-# Bring up o1-adapter(DU)
+# Bring up o1-adapter(CU)
 cd /o1-adapter/src
 ./gnb-adapter --cu
 ```
